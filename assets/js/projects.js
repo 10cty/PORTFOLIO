@@ -19,8 +19,9 @@ window.PROJECTS = [
     id: "mantle",
     title: "Mantle",
     subtitle: "Real World Assets · DeFi",
-    client: "Scribble / Mantle",
+    client: "Mantle",
     type: "UGC",
+    recognition: "Video contest entry",
     duration: "1:41",
     tags: ["Web3", "DeFi"],
     thumb: "assets/img/mantle.jpg",
@@ -35,6 +36,7 @@ window.PROJECTS = [
     subtitle: "Crypto-Backed Loans · Product Launch",
     client: "Busha",
     type: "UGC",
+    recognition: "1 of 6 videos made for Busha",
     duration: "2:14",
     tags: ["Fintech", "Crypto"],
     thumb: "assets/img/busha.jpg",
@@ -49,6 +51,8 @@ window.PROJECTS = [
     subtitle: "dApp Builder AI · Product Launch",
     client: "CodeXero",
     type: "UGC",
+    award: "Contest winner",
+    recognition: "Winner, CodeXero video contest",
     duration: "1:36",
     tags: ["Web3", "AI"],
     thumb: "assets/img/codexero.jpg",
@@ -63,6 +67,7 @@ window.PROJECTS = [
     subtitle: "Crypto to Naira · Feature Explainer",
     client: "Busha",
     type: "UGC",
+    recognition: "1 of 6 videos made for Busha",
     duration: "1:13",
     tags: ["Fintech", "Crypto"],
     thumb: "assets/img/busha2.jpg",
@@ -74,13 +79,24 @@ window.PROJECTS = [
 ];
 
 /*
-  BRANDS — the "Trusted by" strip on the home page.
-  Add a "logo" path (white/transparent PNG or SVG in assets/img/)
-  to show an image; without one, the name is shown as a wordmark.
+  BRANDS — the "Brands I've created for" strip on the home page.
+  Logos are white on transparent (assets/img/brands/). "label: true"
+  prints the name next to logos that are only an icon.
 */
 window.BRANDS = [
-  { name: "Mantle" },
-  { name: "Busha" },
-  { name: "CodeXero" },
-  { name: "Scribble" }
+  { name: "Busha",    logo: "assets/img/brands/busha.png",    h: 28 },
+  { name: "Spenda",   logo: "assets/img/brands/spenda.png",   h: 28 },
+  { name: "Mantle",   logo: "assets/img/brands/mantle.png",   h: 34 },
+  { name: "Jupiter",  logo: "assets/img/brands/jupiter.png",  h: 34, label: true },
+  { name: "CodeXero", logo: "assets/img/brands/codexero.png", h: 34, label: true }
+];
+
+/*
+  HIGHLIGHTS — the track-record list in the About section.
+*/
+window.HIGHLIGHTS = [
+  { big: "$1,000", text: "Winner, Jupiter video contest" },
+  { big: "1st",    text: "Winner, CodeXero video contest" },
+  { big: "6",      text: "Videos produced for Busha" },
+  { big: "5",      text: "UGC videos for Spenda" }
 ];

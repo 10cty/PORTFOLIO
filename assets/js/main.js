@@ -12,6 +12,7 @@
   };
   var pad = function (n) { return (n < 10 ? "0" : "") + n; };
   var PROJECTS = window.PROJECTS || [];
+  var TROPHY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0V4zM8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3M12 13v4M9 20h6M10 17h4"/></svg>';
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>';
 
   /* ---------- nav ---------- */
@@ -37,6 +38,7 @@
         '<div class="card-media">' +
           '<img src="' + esc(p.thumb) + '" alt="" loading="lazy" decoding="async">' +
           '<span class="card-badge">' + esc(p.type) + "</span>" +
+          (p.award ? '<span class="card-award">' + TROPHY + esc(p.award) + "</span>" : "") +
           '<span class="card-play">' + PLAY + "</span>" +
           '<span class="card-dur">' + esc(p.duration) + "</span>" +
         "</div>" +
@@ -62,9 +64,18 @@
   if (brandList) {
     brandList.innerHTML = (window.BRANDS || []).map(function (b) {
       var inner = b.logo
-        ? '<img src="' + esc(b.logo) + '" alt="' + esc(b.name) + '" loading="lazy">'
+        ? '<span class="brand-mark" role="img" aria-label="' + esc(b.name) + '" style="-webkit-mask-image:url(\'' + esc(b.logo) + '\');mask-image:url(\'' + esc(b.logo) + '\');--h:' + (b.h || 30) + 'px"><img src="' + esc(b.logo) + '" alt=""></span>' +
+          (b.label ? '<span class="brand-name">' + esc(b.name) + "</span>" : "")
         : '<span class="brand-word">' + esc(b.name) + "</span>";
       return '<li class="brand">' + (b.url ? '<a href="' + esc(b.url) + '" target="_blank" rel="noopener">' + inner + "</a>" : inner) + "</li>";
+    }).join("");
+  }
+
+  /* ---------- home: highlights ---------- */
+  var hl = $("#highlights");
+  if (hl) {
+    hl.innerHTML = (window.HIGHLIGHTS || []).map(function (h) {
+      return '<li><b>' + esc(h.big) + "</b><span>" + esc(h.text) + "</span></li>";
     }).join("");
   }
 
@@ -82,7 +93,8 @@
             "<p>" + esc(p.about) + "</p>" +
             '<dl class="dl"><dt>Client</dt><dd>' + esc(p.client) + "</dd>" +
             "<dt>Format</dt><dd>" + esc(p.type) + "</dd>" +
-            "<dt>Length</dt><dd>" + esc(p.duration) + "</dd></dl>" +
+            "<dt>Length</dt><dd>" + esc(p.duration) + "</dd>" +
+            (p.recognition ? "<dt>Note</dt><dd>" + esc(p.recognition) + "</dd>" : "") + "</dl>" +
             '<div class="tags">' + p.tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>" +
           "</div>" +
         "</article>"
