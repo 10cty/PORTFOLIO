@@ -84,11 +84,15 @@ window.PROJECTS = [
   prints the name next to logos that are only an icon.
 */
 window.BRANDS = [
-  { name: "Busha",    logo: "assets/img/brands/busha.png",    h: 28 },
-  { name: "Spenda",   logo: "assets/img/brands/spenda.png",   h: 28 },
-  { name: "Mantle",   logo: "assets/img/brands/mantle.png",   h: 34 },
-  { name: "Jupiter",  logo: "assets/img/brands/jupiter.png",  h: 34, label: true },
-  { name: "CodeXero", logo: "assets/img/brands/codexero.png", h: 34, label: true }
+  { name: "Busha",     logo: "assets/img/brands/busha.png",     h: 28 },
+  { name: "Spenda",    logo: "assets/img/brands/spenda.png",    h: 28 },
+  { name: "Irys",      logo: "assets/img/brands/irys.png",      h: 24 },
+  { name: "Caldera",   logo: "assets/img/brands/caldera.png",   h: 22, label: true },
+  { name: "Succinct",  logo: "assets/img/brands/succinct.png",  h: 32, label: true },
+  { name: "Boundless", logo: "assets/img/brands/boundless.png", h: 28, label: true },
+  { name: "Jupiter",   logo: "assets/img/brands/jupiter.png",   h: 32, label: true },
+  { name: "Mantle",    logo: "assets/img/brands/mantle.png",    h: 32 },
+  { name: "CodeXero",  logo: "assets/img/brands/codexero.png",  h: 32, label: true }
 ];
 
 /*
@@ -98,5 +102,6 @@ window.HIGHLIGHTS = [
   { big: "$1,000", text: "Winner, Jupiter video contest" },
   { big: "1st",    text: "Winner, CodeXero video contest" },
   { big: "6",      text: "Videos produced for Busha" },
-  { big: "5",      text: "UGC videos for Spenda" }
+  { big: "5",      text: "UGC videos for Spenda" },
+  { big: "4",      text: "Paid Web3 creator work for Irys, Caldera, Succinct and Boundless" }
 ];

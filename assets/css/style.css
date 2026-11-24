@@ -159,9 +159,9 @@ section{position:relative}
 
 /* ---------- brands ---------- */
 .brands{padding:clamp(2.5rem,5vw,3.5rem) 0;border-bottom:1px solid var(--line)}
-.brands-inner{display:flex;align-items:center;gap:clamp(1.5rem,4vw,4rem);flex-wrap:wrap}
-.brands-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);flex:0 0 auto;max-width:24ch;line-height:1.7}
-.brand-list{display:flex;flex:1;justify-content:space-between;align-items:center;gap:clamp(1.5rem,4vw,3.5rem);flex-wrap:wrap;list-style:none}
+.brands-inner{display:flex;flex-direction:column;align-items:flex-start;gap:1.75rem}
+.brands-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);flex:0 0 auto;max-width:none;line-height:1.7}
+.brand-list{display:grid;width:100%;grid-template-columns:repeat(5,1fr);align-items:center;gap:2rem clamp(1.5rem,3vw,2.5rem);list-style:none}
 .brand{display:flex;align-items:center;opacity:.55;transition:opacity .3s,color .3s}
 .brand:hover{opacity:1;color:var(--green)}
 .brand{gap:.7rem}
@@ -237,6 +237,7 @@ section{position:relative}
 .highlights{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
 .highlights li{background:var(--bg);padding:1.4rem 1.3rem;display:flex;flex-direction:column;gap:.45rem}
 .highlights b{font-family:var(--f-display);font-weight:900;font-size:clamp(2rem,3.4vw,2.7rem);line-height:1;color:var(--green)}
+.highlights li:last-child:nth-child(odd){grid-column:1/-1}
 .highlights span{font-size:.92rem;color:var(--muted)}
 
 /* ---------- services ---------- */
@@ -371,13 +372,14 @@ a.ci:hover svg{transform:translate(3px,-3px)}
   .stat:nth-child(3){padding-left:0;border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .card-play{opacity:1;transform:translate(-50%,-50%) scale(.9)}
-  .brand-list{justify-content:flex-start}
+  .brand-list{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:560px){
   .hero-name{font-size:23vw}
   .form-row{grid-template-columns:1fr}
   .hero-ctas .btn{flex:1;justify-content:center}
   .brands-inner{flex-direction:column;align-items:flex-start}
+  .brand-list{grid-template-columns:repeat(2,1fr)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
